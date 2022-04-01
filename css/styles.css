@@ -10,6 +10,10 @@
     min-height: 400px;
 }
 
+.row-margin {
+    margin: 20px auto;
+}
+
 .footer {
     background-color: #d1c4e9;
     margin: 0 auto;
