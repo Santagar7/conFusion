@@ -7,7 +7,7 @@
     margin: 0 auto;
     padding: 50px 0 50px 0;
     border-bottom: 1px ridge;
-    min-height: 400px;
+    min-height: 300px;
 }
 
 .row-margin {
@@ -40,4 +40,8 @@ body {
 
 .navbar-dark {
     background: #512da8;
+}
+
+.btn-wd {
+    width: 60%;
 }
