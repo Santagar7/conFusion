@@ -52,3 +52,9 @@ body {
     border-bottom: 1px solid #ddd;
     padding: 10px;
 }
+
+a.active {
+    color: #0f0f0f;
+    text-decoration: none;
+}
+
