@@ -21,17 +21,58 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Navbar" aria-expanded="false" aria-controls="Navbar">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"></a>
+        <a class="navbar-brand me-auto" href="#"><img src="img/logo.png" height="30" width="41"></a>
         <div id="Navbar" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item active"><a class="nav-link active" href="#"><span class="fa fa-home"></span> Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="aboutus.html"><span class="fa fa-info"></span> About</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contacts</a></li>
             </ul>
+            <span class="navbar-text">
+                <a role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    <span class="fa fa-sign-in"></span> Login
+                </a>
+            </span>
         </div>
     </div>
 </nav>
+
+<div id="loginModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="contentinfo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Login</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row row">
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="inputEmail">Email address</label>
+                            <input type="email" class="form-control form-control-sm ms-1" id="inputEmail" placeholder="Enter email">
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label class="sr-only" for="inputPassword">Email address</label>
+                            <input type="password" class="form-control form-control-sm ms-1" id="inputPassword" placeholder="Password">
+                        </div>
+                        <div class="col-sm-auto">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label">Remember me</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row mt-2">
+                        <button type="button" class="btn btn-secondary btn-sm ms-auto" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-sm ms-1">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <header class="container-fluid jumbotron p-5">
     <div class="container">
         <div class="row row-header">
@@ -44,7 +85,9 @@
                 <img src="img/logo.png" class="img-fluid">
             </div>
             <div class="col-12 col-sm-3 align-self-center d-flex justify-content-center">
-                <a type="button" class="btn btn-warning btn-wd" href="#reserveform">Reserve Table</a>
+                <a role="button" type="button" class="btn btn-warning btn-wd" data-bs-toggle="tooltip" data-bs-html="true"
+                   title="or Call us at <br><strong>+852 12345678</strong>"
+                   data-bs-placement="bottom" href="#reserveform">Reserve Table</a>
             </div>
         </div>
     </div>
@@ -57,7 +100,7 @@
         </div>
         <div class="col col-sm order-sm-first col-md">
             <div class="media row">
-                <img class="d-flex mr-3 img-thumbnail align-self-center col-4 col-sm-3 col-md-2" src="img/uthappizza.png" alt="Uthappizza">
+                <img class="d-flex me-3 img-thumbnail align-self-center col-4 col-sm-3 col-md-2" src="img/uthappizza.png" alt="Uthappizza">
                 <div class="media-body col col-sm">
                     <h2 class="mt-0">Uthappizza <span class="badge bg-danger">HOT</span><span class="badge rounded-pill bg-secondary ms-1">$4.99</span></h2>
                     <p class="d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe
@@ -80,7 +123,7 @@
                         main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per
                         person </p>
                 </div>
-                <img class="d-flex mr-3 img-thumbnail align-self-center col-4 col-sm-3 col-md-2" src="img/buffet.png" alt="Buffet">
+                <img class="d-flex me-3 img-thumbnail align-self-center col-4 col-sm-3 col-md-2" src="img/buffet.png" alt="Buffet">
             </div>
         </div>
     </div>
@@ -91,7 +134,7 @@
         </div>
         <div class="col col-sm order-sm-first col-md">
             <div class="media row">
-                <img class="d-flex mr-3 img-thumbnail align-self-center col-4 col-sm-3 col-md-2" src="img/alberto.png" alt="Alberto">
+                <img class="d-flex me-3 img-thumbnail align-self-center col-4 col-sm-3 col-md-2" src="img/alberto.png" alt="Alberto">
                 <div class="media-body col col-sm">
                     <h2>Alberto Somayya</h2>
                     <h4>Executive Chef</h4>
@@ -201,9 +244,16 @@
     </div>
 </footer>
 <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!--<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>-->
+<!--<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>-->
+<!--<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script>
+    $(document).ready(function() {
+        $("body").tooltip({ selector: '[data-bs-toggle=tooltip]',placement: 'bottom' });
+    });
+</script>
 </body>
 
 </html>
