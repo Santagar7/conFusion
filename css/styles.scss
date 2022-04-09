@@ -73,3 +73,18 @@ body {
   position: absolute;
   bottom: 0;
 }
+
+.modal {
+
+  .modal-header {
+    color: floralwhite;
+    background:$background-dark;
+
+    .close {
+      color: floralwhite;
+    }
+  }
+  .modal-body {
+    background-color: $background-pale;
+  }
+}

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <link rel="stylesheet" href="css/styles-old.css">
+<!--    <link rel="stylesheet" href="css/styles.css">-->
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -34,7 +35,7 @@
                         class="fa fa-address-card fa-lg"></span> Contacts</a></li>
             </ul>
             <span class="navbar-text">
-                <a role="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <a role="button" id="loginButton">
                     <span class="fa fa-sign-in"></span> Login
                 </a>
             </span>
@@ -171,7 +172,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center d-flex justify-content-center">
-                    <a role="button" class="btn btn-warning btn-wd" data-bs-toggle="modal" href="#reserveform">Reserve Table</a>
+                    <button type="button" id="reserveButton" class="btn btn-warning btn-wd">Reserve Table</button>
                 </div>
             </div>
         </div>
@@ -358,6 +359,18 @@
                 $('#carouselButton').children('span').addClass('fa-pause');
             }
         });
+        let reserveModal = new bootstrap.Modal(document.getElementById('reserveform'), {
+            keyboard: true
+        });
+        let loginModal = new bootstrap.Modal(document.getElementById('loginModal'), {
+            keyboard: true
+        });
+        $('#reserveButton').click(function () {
+            reserveModal.show();
+        });
+        $('#loginButton').click(function () {
+            loginModal.show();
+        })
     })
 </script>
 </body>
