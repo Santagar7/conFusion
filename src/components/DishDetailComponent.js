@@ -4,10 +4,6 @@ import Moment from "moment";
 
 class DishDetail extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     renderDish(dish) {
         if (dish != null) {
             return (
@@ -48,15 +44,17 @@ class DishDetail extends Component {
         } else {
             return (
                 <div></div>
-            );
+            )
         }
     }
 
     render() {
         return (
-            <div className={"container row"}>
-                {this.renderDish(this.props.selectedDish)}
-                {this.renderComments(this.props.selectedDish.comments)}
+            <div className={"container"}>
+                <div className={"row"}>
+                    {this.renderDish(this.props.dish)}
+                    {this.renderComments(this.props.dish.comments)}
+                </div>
             </div>
         );
 
