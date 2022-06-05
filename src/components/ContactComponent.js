@@ -8,9 +8,9 @@ class Contact extends Component {
         super(props, context);
 
         this.state = {
-            firstName: "",
-            lastName: "",
-            telNum: "",
+            firstname: "",
+            lastname: "",
+            telnum: "",
             email: "",
             agree: false,
             contactType: "Tel.",
@@ -89,22 +89,22 @@ class Contact extends Component {
                             <FormGroup row>
                                 <Label htmlFor={"firstname"} md={2}>First Name</Label>
                                 <Col md={10}>
-                                    <Input type="text" id={"firstname"} name={"firstName"} placeholder={"First Name"}
-                                           value={this.state.firstName} onChange={this.handleInputChange}/>
+                                    <Input type="text" id={"firstname"} name={"firstname"} placeholder={"First Name"}
+                                           value={this.state.firstname} onChange={this.handleInputChange}/>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor={"lastname"} md={2}>First Name</Label>
                                 <Col md={10}>
-                                    <Input type="text" id={"lastname"} name={"lastName"} placeholder={"Last Name"}
-                                           value={this.state.lastName} onChange={this.handleInputChange}/>
+                                    <Input type="text" id={"lastname"} name={"lastname"} placeholder={"Last Name"}
+                                           value={this.state.lastname} onChange={this.handleInputChange}/>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
                                 <Label htmlFor={"telnum"} md={2}>Contact Tel.</Label>
                                 <Col md={10}>
-                                    <Input type="tel" id={"telnum"} name={"telNum"} placeholder={"Tel. Number"}
-                                           value={this.state.telNum} onChange={this.handleInputChange}/>
+                                    <Input type="tel" id={"telnum"} name={"telnum"} placeholder={"Tel. Number"}
+                                           value={this.state.telnum} onChange={this.handleInputChange}/>
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
