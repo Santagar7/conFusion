@@ -1,8 +1,10 @@
-import {combineReducers, legacy_createStore} from "redux";
+import {combineReducers, legacy_createStore, applyMiddleware} from "redux";
 import {Dishes} from "./dishes";
 import {Comments} from "./comments";
 import {Promotions} from "./promotions";
 import {Leaders} from "./leaders";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
 export const ConfigureStore = () => {
     return legacy_createStore(
@@ -11,6 +13,7 @@ export const ConfigureStore = () => {
             comments: Comments,
             promotions: Promotions,
             leaders: Leaders
-        })
+        }),
+        applyMiddleware(thunk, logger)
     );
 }
