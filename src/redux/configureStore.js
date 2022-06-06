@@ -1,11 +1,11 @@
-import {legacy_createStore, combineReducers} from "redux";
+import {combineReducers, legacy_createStore} from "redux";
 import {Dishes} from "./dishes";
 import {Comments} from "./comments";
 import {Promotions} from "./promotions";
 import {Leaders} from "./leaders";
 
 export const ConfigureStore = () => {
-    const store = legacy_createStore(
+    return legacy_createStore(
         combineReducers({
             dishes: Dishes,
             comments: Comments,
@@ -13,6 +13,4 @@ export const ConfigureStore = () => {
             leaders: Leaders
         })
     );
-
-    return store;
 }
