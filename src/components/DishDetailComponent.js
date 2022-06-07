@@ -18,19 +18,23 @@ import Moment from "moment";
 import {Control, Errors, LocalForm} from "react-redux-form";
 import {Loading} from "./LoadingComponent";
 import {baseUrl} from "../shared/baseUrl";
+import {FadeTransform, Fade, Stagger} from "react-animation-components";
+import Switch from "react-router-dom/es/Switch";
 
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => (val) && (val.length >= len);
 
 function RenderDish({dish}) {
     return (<div className={"col-12 col-md-5 m-1"}>
-        <Card>
-            <CardImg width={"100%"} src={baseUrl + dish.image} alt={dish.name}/>
-            <CardBody>
-                <CardTitle>{dish.name}</CardTitle>
-                <CardText>{dish.description}</CardText>
-            </CardBody>
-        </Card>
+        <FadeTransform in transformProps={{exitTransform: "scale(0.5) translateY(-50%)"}}>
+            <Card>
+                <CardImg width={"100%"} src={baseUrl + dish.image} alt={dish.name}/>
+                <CardBody>
+                    <CardTitle>{dish.name}</CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        </FadeTransform>
     </div>)
 }
 
@@ -114,19 +118,25 @@ class CommentForm extends Component {
 function RenderComments({comments, postComment, dishId}) {
 
     const mappedComments = comments.map((comment) => {
-        return (<li key={comment.id}>
-            <p>{comment.comment}</p>
-            <p>-- {comment.author}, {Moment(comment.date).format('MMM d, YYYY')}</p>
-        </li>)
+        return (
+            <Fade in>
+                <li key={comment.id}>
+                    <p>{comment.comment}</p>
+                    <p>-- {comment.author}, {Moment(comment.date).format('MMM d, YYYY')}</p>
+                </li>
+            </Fade>
+        )
     });
 
     return (<div className={"col-12 col-md-5 m-1"}>
         <h4>Comments</h4>
         <ul className={"list-unstyled"}>
-            {mappedComments}
+            <Stagger in>
+                {mappedComments}
+            </Stagger>
         </ul>
         <CommentForm dishId={dishId} postComment={postComment}/>
-    </div>);
+    </div>)
 }
 
 const DishDetail = (props) => {
